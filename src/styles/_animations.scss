@@ -1,0 +1,50 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.fade-in {
+  animation: fadeIn $transition-medium forwards;
+}
+
+.scale-up {
+  animation: scaleUp $transition-fast forwards;
+}
+
+// Darken effect for layout page
+.darkened {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.05);
+    z-index: 1;
+    pointer-events: none;
+    transition: background $transition-medium;
+  }
+  
+  .card:not(.hovered) {
+    filter: brightness(0.95);
+    transition: filter $transition-medium;
+  }
+}

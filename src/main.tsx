@@ -4,11 +4,7 @@ import { AppProvider } from './utils/context';
 import { App } from './App';
 import './styles/main.scss';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-
-root.render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <AppProvider>
       <App />

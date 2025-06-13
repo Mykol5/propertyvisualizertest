@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useAppContext } from './utils/context';
+import { TowersPage } from './pages/TowersPage';
+import { FloorPage } from './pages/FloorPage';
+import { LayoutPage } from './pages/LayoutPage';
+import { LayoutViewer } from './components/LayoutViewer';
+import './styles/main.scss';
 
-function App() {
+export const App: React.FC = () => {
+  const { selectedTower, selectedFloor, selectedApartment } = useAppContext();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {!selectedTower && <TowersPage />}
+      {selectedTower && !selectedFloor && <FloorPage />}
+      {selectedTower && selectedFloor && !selectedApartment && <LayoutPage />}
+      {selectedApartment && <LayoutViewer />}
     </div>
   );
-}
-
-export default App;
+};

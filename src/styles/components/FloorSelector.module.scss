@@ -1,0 +1,33 @@
+@import '../variables';
+
+.container {
+  margin-top: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.floorButton {
+  aspect-ratio: 1;
+  border: 2px solid $light-gray;
+  background: white;
+  border-radius: $radius-sm;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: $transition-fast;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  &.selected {
+    background: $primary-color;
+    color: white;
+    border-color: $primary-color;
+  }
+}

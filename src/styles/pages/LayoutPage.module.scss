@@ -1,0 +1,36 @@
+@import '../variables';
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.title {
+  margin: 0;
+  color: $primary-color;
+}
+
+.layoutContainer {
+  background: $light-gray;
+  border-radius: $radius-md;
+  padding: 2rem;
+  transition: background-color $transition-medium;
+
+  &.darkened {
+    background: darken($light-gray, 5%);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}

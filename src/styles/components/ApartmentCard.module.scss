@@ -1,0 +1,43 @@
+@import '../variables';
+
+.card {
+  background: white;
+  border-radius: $radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  transition: $transition-medium;
+  cursor: pointer;
+
+  &.hovered {
+    transform: scale(1.05);
+    box-shadow: $shadow-md;
+    z-index: 2;
+  }
+}
+
+.imageContainer {
+  height: 180px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform $transition-medium;
+}
+
+.info {
+  padding: 1rem;
+
+  h3 {
+    margin-bottom: 0.5rem;
+    color: $primary-color;
+  }
+
+  p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+    color: $text-color;
+  }
+}
