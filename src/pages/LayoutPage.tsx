@@ -6,7 +6,7 @@ import styles from '../styles/pages/LayoutPage.module.scss';
 import { Apartment } from '../data/mockData';
 
 export const LayoutPage: React.FC = () => {
-  const { selectedFloor, selectedApartment, selectApartment, goBack } = useAppContext();
+  const { selectedFloor, selectApartment, goBack } = useAppContext();
   const [hoveredApartment, setHoveredApartment] = useState<string | null>(null);
 
   return (
