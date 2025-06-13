@@ -1,9 +1,49 @@
+// @import '../variables';
+
+// .container {
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   padding: 2rem 1rem;
+// }
+
+// .header {
+//   display: flex;
+//   align-items: center;
+//   gap: 1rem;
+//   margin-bottom: 2rem;
+// }
+
+// .title {
+//   margin: 0;
+//   color: $primary-color;
+// }
+
+// .layoutContainer {
+//   background: $light-gray;
+//   border-radius: $radius-md;
+//   padding: 2rem;
+//   transition: background-color $transition-medium;
+
+//   &.darkened {
+//     background: darken($light-gray, 5%);
+//   }
+// }
+
+// .grid {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+//   gap: 2rem;
+// }
+
+
+
 @import '../variables';
 
 .container {
+  padding: 1rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  min-height: 100vh;
 }
 
 .header {
@@ -14,23 +54,27 @@
 }
 
 .title {
-  margin: 0;
+  font-size: 1.5rem;
   color: $primary-color;
-}
-
-.layoutContainer {
-  background: $light-gray;
-  border-radius: $radius-md;
-  padding: 2rem;
-  transition: background-color $transition-medium;
-
-  &.darkened {
-    background: darken($light-gray, 5%);
-  }
+  margin: 0;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
+  
+  // Mobile - 1 column
+  grid-template-columns: 1fr;
+  
+  // Tablet and Desktop - 2 columns
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Darken effect when hovering a card
+.grid:hover .card:not(:hover) {
+  opacity: 0.9;
+  filter: brightness(0.95);
+  transform: scale(0.98);
 }
